@@ -2,10 +2,12 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: Install packages
-    init: |
-      pip install -r requirements.txt
-      pip install pytest
-  - name: Run Jupyter
+  - name: Launch Jupyter Notebook
+    init: pip install --upgrade pip && pip install -r requirements.txt
     command: |
-      jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=''
+      jupyter lab --ip=0.0.0.0 --no-browser --NotebookApp.token='' --NotebookApp.password='' --allow-root
+
+ports:
+  - port: 8888
+    onOpen: open-browser
+    name: JupyterLab

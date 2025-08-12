@@ -8,3 +8,7 @@ requests
 esda
 contextily
 pysal
+matplotlib
+seaborn
+shapely
+jupyterlab
