@@ -1,0 +1,21 @@
+name: G1 – Hotspots & Spatial Autocorrelation
+type: assignment
+autograding:
+  setup:
+    - pip install -r requirements.txt
+    - pip install pytest
+  tests:
+    - name: Output files exist
+      run: pytest tests/test_outputs.py
+      timeout: 60
+      points: 10
+    # You can add more tests here if needed
+  # Optional: Define files that should be copied into student repos
+  files:
+    - notebook.ipynb
+    - requirements.txt
+    - .gitpod.yml
+    - .gitpod.Dockerfile
+    - tests/test_outputs.py
+    - data/sample_neighborhoods.gpq
+    - README.md

@@ -1,0 +1,11 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Install packages
+    init: |
+      pip install -r requirements.txt
+      pip install pytest
+  - name: Run Jupyter
+    command: |
+      jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=''
